@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>registro</title>
+    <link rel="stylesheet" href="./moda.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #360033;
+            background: linear-gradient(to right, #0b8793, #360033);
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+            text-align: center;
+        }
+
+        form {
+            margin: 50px auto;
+            max-width: 500px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            color: #333;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .error {
+            color: red;
+            font-size: 0.8em;
+            margin-top: 5px;
+        }
+
+        .btn-primary {
+            margin: 20px;
+        }
+
+        /* Modal Styles */
+        .modal-custom {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content-custom {
+            background-color: white;
+            margin: auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 80%;
+            max-width: 500px;
+            animation: slide-in 0.3s ease-out;
+            color: #333; /* Asegura que el texto dentro del modal sea visible */
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        @media (max-width: 600px) {
+            .modal-content-custom {
+                width: 90%;
+            }
+        }
+
+        @keyframes slide-in {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<h1>Agendar </h1>
+<a href="index.html" class="btn btn-primary">Volver al inicio</a>
+<button id="openModalBtn" class="btn btn-secondary">Importante</button>
+
+<form id="formulario">
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" required>
+    <br><br>
+    <label for="apellido">Apellido:</label>
+    <input type="text" id="apellido" name="apellido" required>
+    <br><br>
+    <label for="rut">RUT/identificador:</label>
+    <input type="text" id="rut" name="rut" required>
+    <br><br>
+    <label for="ciudad">Pais:</label>
+    <input type="text" id="ciudad" name="ciudad" required>
+    <br><br>
+    <label for="comuna">servidor:</label>
+    <input type="text" id="comuna" name="comuna" required>
+    <br><br>
+    <label for="nombre-mascota">Nick name videojuego:</label>
+    <input type="text" id="nombre-mascota" name="nombre-mascota" required>
+    <br><br>
+    <label for="genero-mascota">Juego:</label>
+    <select id="genero-mascota" name="tipo-juego" required>
+        <option value="league of legends">League of legends</option>
+        <option value="Valorant">Valorant</option>
+        <option value="Rocket league ">Rocket league</option>
+        <option value="fortnite">Fortnite</option>
+    </select>
+    <br><br>
+    <label for="vacunas">Cuantos dias de Coaching necesita:</label>
+    <input type="number" id="vacunas" name="vacunas" required>
+    <br><br>
+    <label for="tipo-mascota">Liga actual:</label>
+    <input type="text" id="tipo-mascota" name="tipo-mascota" required>
+    <br><br>
+    <label for="fecha">Fecha Inicio:</label>
+    <input type="date" id="fecha" name="fecha" required>
+    <br><br>
+    <label for="hora">Hora:</label>
+    <select id="hora" name="hora" required>
+        <option value="">Seleccione una hora</option>
+        <option value="09:00">09:00</option>
+        <option value="10:00">10:00</option>
+        <option value="11:00">11:00</option>
+        <option value="12:00">12:00</option>
+        <option value="13:00">13:00</option>
+        <option value="14:00">14:00</option>
+        <option value="15:00">15:00</option>
+        <option value="16:00">16:00</option>
+        <option value="17:00">17:00</option>
+        <option value="18:00">18:00</option>
+    </select>
+    <br><br>
+
+    <input type="submit" value="Enviar">
+    <button id="limpiarFormulario" class="btn btn-danger">Limpiar Formulario</button>
+</form>
+
+<!-- Modal -->
+<div id="myModal" class="modal-custom">
+    <div class="modal-content-custom">
+        <span class="close">&times;</span>
+        <h2>Debes tener en cuenta</h2>
+        <p>Por favor, tenga en cuenta que al completar este formulario, se establecerá un contacto directo con nuestro equipo. Nos pondremos en comunicación con usted a la mayor brevedad posible. Asegúrese de que está disponible para recibir nuestras notificaciones. Complete todos los campos obligatorios y, en caso de cualquier inconveniente, no dude en ponerse en contacto con nosotros a través de nuestro correo electrónico.</p>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+     document.addEventListener('DOMContentLoaded', (event) => {
+        const modal = document.getElementById("myModal");
+        const openModalBtn = document.getElementById("openModalBtn");
+        const closeModalSpan = document.getElementsByClassName("close")[0];
+
+        openModalBtn.onclick = function() {
+            modal.style.display = "flex";
+        }
+
+        closeModalSpan.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    });
+
+    
+    $(document).ready(function(){
+        // Limpiar formulario al hacer clic en el botón
+        $("#limpiarFormulario").click(function(){
+            $("#formulario")[0].reset();
+        });
+    });
+</script>
+
+</body>
+</html>

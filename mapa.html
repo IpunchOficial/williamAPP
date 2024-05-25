@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ubicación</title>
+    <link rel="stylesheet" type="text/css" href="mapa.css">
+    <style>
+        body {
+            background: #485563; /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #29323c, #485563); /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #29323c, #485563); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            color: white;
+            text-align: center;
+        }
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+        #returnBtn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        #returnBtn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ubicación</h1>
+    <div id="map"></div>
+    <button id="returnBtn" onclick="window.location.href='index.html'">Volver al Menú Principal</button>
+
+    <script src="mapa.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDaeWicvigtP9xPv919E-RNoxfvC-Hqik&callback=iniciarMap"></script>
+</body>
+</html>

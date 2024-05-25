@@ -1,0 +1,106 @@
+*,
+*:before,
+*:after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #360033; /* Establece el color de fondo del cuerpo  */
+    background: -webkit-linear-gradient(to right, #0b8793, #360033); /*  Define un degradado lineal como el fondo del cuerpo */
+    background: linear-gradient(to right, #0b8793, #360033); /* Define un degradado lineal como el fondo del cuerpo */
+    font-family: 'Poppins', sans-serif;  /* Establece la fuente para el texto dentro del cuerpo del documento. */
+    position: relative;   /* Establece la posición del cuerpo del documento como relativa. */
+    min-height: 100vh;   /*  Establece la altura mínima del cuerpo como el 100% de la altura de la ventana gráfica */
+}
+
+.container {
+    width: 400px;
+    background-color: rgba(255, 255, 255, 0.13);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+    padding: 50px 35px;
+    margin-top: 50px; /* Agregamos un margen superior para separar del borde superior */
+}
+
+form {
+    display: flex;  /* Esto establece el modelo de visualización del formulario como un contenedor de diseño flexible. */
+    flex-direction: column;   /* Esta propiedad define la dirección en la que los elementos */
+    align-items: center;  /* Esta propiedad alinea los elementos hijos del contenedor flexible */
+}
+
+form h1 {
+    font-size: 32px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-align: center;
+}
+
+.input-control {
+    display: flex; /* Esta regla CSS establece el modelo de visualización del elemento con la clase .input-control */
+    flex-direction: column; /* Esta propiedad define la dirección en la que los elementos hijos del contenedor flexible */
+    margin-bottom: 20px; /* Esta regla establece un margen inferior de 20 píxeles para el elemento con la clase */
+    width: 100%;  /* Esta propiedad establece el ancho del elemento con la clase */
+}
+
+.input-control label {
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+.input-control input {
+    height: 40px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.07);
+    border: 2px solid #f0f0f0;
+    border-radius: 4px;
+    padding: 0 10px;
+    font-size: 14px;
+    font-weight: 300;
+    color: #ffffff;
+}
+
+.input-control .error {
+    color: #ff3860;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+#form button {
+    width: 100%;
+    height: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px; /* Agregamos un margen inferior para separar del botón de entrar */
+    padding: 0;
+    background-color: #0897d4;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#form button:hover {
+    background-color: #0674a0;
+}
+
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #0897d4;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#back-to-top:hover {
+    background-color: #0674a0;
+}
